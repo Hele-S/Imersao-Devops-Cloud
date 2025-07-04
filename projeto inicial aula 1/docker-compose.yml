@@ -1,0 +1,13 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual.
+    build: .
+    container_name: api
+    # Mapeia a porta 8000 do contêiner para a porta 8000 do seu computador.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no diretório /app dentro do contêiner.
+    # Isso permite que as alterações no seu código local sejam refletidas
+    # instantaneamente no contêiner, o que é ideal para desenvolvimento.
+    volumes:
+      - .:/app
